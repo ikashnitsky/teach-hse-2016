@@ -1,0 +1,131 @@
+---
+title: "ggplot2"
+author: Ilya Kashnitsky
+date: 09 December 2016
+output:
+  revealjs::revealjs_presentation:
+    theme: serif
+    highlight: zenburn
+    center: TRUE
+    transitionSpeed: fast
+    transition: slide
+    incremental: false
+    reveal_options:
+      slideNumber: true
+      previewLinks: true
+    self_contained: true
+    fig_width: 10
+    fig_height: 7
+    fig_caption: false
+    smart: true
+    mathjax: null
+---
+
+```{r setup, include=FALSE}
+Sys.setlocale(category="LC_CTYPE", locale="Russian")
+
+stripcolour <- "grey93"
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = TRUE)
+
+library(stats)
+library(ik)
+library(tidyverse)
+library(ggthemes)
+library(knitr)
+library(rmarkdown)
+library(revealjs)
+theme_set(theme_minimal() +
+    theme(panel.background = element_blank(),
+          strip.background = element_rect(colour = NA, fill = stripcolour)))
+```
+
+
+# A bit more motivation {data-background=#cce5cc}
+
+
+##
+<iframe width="980px" height="630px" src="http://qz.com/316906/the-dude-map-how-american-men-refer-to-their-bros/"></iframe>
+<span style="font-size:0.7em">http://qz.com/316906/the-dude-map-how-american-men-refer-to-their-bros</span>
+
+## Visualizing life tables
+<span style="font-size:1.5em">http://flowingdata.com/2016/01/19/how-you-will-die</span>
+
+##
+<iframe width="980px" height="630px" src="https://www.r-bloggers.com/pisa-2015-how-to-readprocessplot-the-data-with-r"></iframe>
+<span style="font-size:0.7em">https://www.r-bloggers.com/pisa-2015-how-to-readprocessplot-the-data-with-r</span>
+
+## American schools
+<span style="font-size:1.2em">http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html</span>
+
+
+
+
+        
+# Plotting systems in R? {data-background=#ffcccc} 
+
+##
+>- `base`
+>- `lattice`
+>- <span style="font-size:1.5em; color:green">`ggplot2`</span>
+
+## "The winner takes it all"
+![cat](http://i.imgur.com/zJkOsg6.gif)
+
+
+
+## {data-background="http://i.imgur.com/bObt6rP.png"} 
+
+
+## Strength of `base` plotting system
+>- Usually, `base` knows how to plot an object
+>- Extremely easy to use if you are happy with the default settings
+>- <span style="font-size:1.5em; color:red">BUT</span>
+>- Now `ggplot2` has the `autoplot` function
+
+
+## The only example when `ggplot2` failed for me {data-background=#ffcccc}
+
+<span style="font-size:1.5em">http://stackoverflow.com/questions/17753502</span>
+
+<span style="font-size:1.5em">https://github.com/tidyverse/ggplot2/issues/1720</span>
+
+
+
+
+
+# What makes `ggplot2` special? {data-background=#cefafa}
+
+##
+<span style="font-size:1.5em">"gg" means "Grammar of graphics"</span>
+  
+<iframe width="980px" height="500px" src="http://www.springer.com/us/book/9780387245447"></iframe>
+<span style="font-size:0.7em">http://www.springer.com/us/book/9780387245447</span>
+
+
+## Extremely big and helpful community
+>- Help
+>- Examples
+>- Rapid development
+>- Extensions
+
+##
+<iframe width="980px" height="630px" src="http://www.ggplot2-exts.org/gallery/"></iframe>
+<span style="font-size:0.7em">http://www.ggplot2-exts.org/gallery/</span>
+
+
+## Amazing documentation
+>- Whenever you have a question on `ggplot2`, the first place to go is 
+>- http://docs.ggplot2.org/current
+
+##
+<iframe width="980px" height="630px" src="http://docs.ggplot2.org/current/"></iframe>
+<span style="font-size:0.7em">http://docs.ggplot2.org/current</span>
+
+
+
+
+
+# `ggplot2` show {data-background=#ffffff}
+
+## Please follow me on "`show-ggplot2.R`"
+
